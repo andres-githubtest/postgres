@@ -11,6 +11,12 @@ RUN powershell -NoLogo -NoProfile -Command \
   Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
   Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
 
+RUN powershell -NoLogo -NoProfile -Command \
+  choco feature disable -n=usePackageExitCodes ; \
+  choco upgrade -y visualstudio2019buildtools; \
+  Remove-Item C:\ProgramData\chocolatey\logs\*.* -Force -Recurse ; \
+  Remove-Item C:\Users\ContainerAdministrator\AppData\Local\Temp\*.* -Force -Recurse
+
 # not needed anymore, installed in cmake image after
 # https://github.com/cirruslabs/docker-images-windows/pull/21/commits/437d7321d33198f27246dac11d80bac29a0aed0a
 #RUN powershell -NoLogo -NoProfile -Command \
