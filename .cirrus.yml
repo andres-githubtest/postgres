@@ -393,3 +393,5 @@ task:
     clang_a_warning_script:
       - ./configure --cache clang.cache --enable-cassert CC="ccache clang"
       - time make -s -j4 clean && time make -s -j4
+
+# just amending my luck
